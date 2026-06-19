@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe Management Mini Project</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Sunrise Cafe Management</h1>
+</header>
+
+<div class="container">
+    <h2>Menu</h2>
+
+    <div class="item">
+        <span>Coffee - ₹50</span>
+        <input type="number" id="coffee" min="0" value="0">
+    </div>
+
+    <div class="item">
+        <span>Tea - ₹20</span>
+        <input type="number" id="tea" min="0" value="0">
+    </div>
+
+    <div class="item">
+        <span>Sandwich - ₹80</span>
+        <input type="number" id="sandwich" min="0" value="0">
+    </div>
+
+    <button onclick="calculateBill()">Generate Bill</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+function calculateBill() {
+    let coffee = parseInt(document.getElementById('coffee').value) || 0;
+    let tea = parseInt(document.getElementById('tea').value) || 0;
+    let sandwich = parseInt(document.getElementById('sandwich').value) || 0;
+
+    let total = (coffee * 50) + (tea * 20) + (sandwich * 80);
+
+    document.getElementById('result').innerHTML =
+        "Total Bill: ₹" + total;
+}
+</script>
+</body>
+</html>
